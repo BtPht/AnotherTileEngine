@@ -22,7 +22,12 @@ SOURCES += main.cpp \
     basictile.cpp \
     infotile.cpp \
     basemapbuilder.cpp \
-    richobject.cpp
+    richobject.cpp \
+    statemanager.cpp \
+    loadingwindow.cpp \
+    intromenu.cpp \
+    ingamewindow.cpp \
+    ingamemenu.cpp
 
 HEADERS += \
     windowsmanager.h \
@@ -34,7 +39,14 @@ HEADERS += \
     basictile.h \
     infotile.h \
     basemapbuilder.h \
-    richobject.h
+    richobject.h \
+    iwindowcontent.h \
+    statemanager.h \
+    loadingwindow.h \
+    intromenu.h \
+    ingamewindow.h \
+    ingamemenu.h \
+    istatemanager.h
 
 OTHER_FILES += \
     ../test.map \

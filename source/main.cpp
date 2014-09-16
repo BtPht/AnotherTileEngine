@@ -1,7 +1,10 @@
-#include "windowsmanager.h"
+#include "statemanager.h"
 
 int main()
 {
-        WindowsManager fenetre;
-        return fenetre.runGame();
+        StateManager context;
+
+        while(context.drawCurrentState());
+
+        return 0;
 }

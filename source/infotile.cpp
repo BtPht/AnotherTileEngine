@@ -33,8 +33,6 @@ InfoTile::InfoTile(const sf::Vector2f &p_pos,
 
         cadre.setPosition(p_pos);
         cadre.setSize(sf::Vector2f(max + 3, nb_lines * size_font));
-
-
 }
 
 InfoTile::InfoTile(const sf::Vector2f &p_pos, const std::string &p_text)

@@ -41,10 +41,6 @@ class AnimatedSprite : public sf::Sprite {
 public:
         explicit AnimatedSprite(const sf::Texture &texture = sf::Texture(), sf::Time frameTime = sf::seconds(0.2), bool paused = false, bool looped = true);
 
-        //sf::FloatRect getLocalBounds() const;
-        //sf::FloatRect getGlobalBounds() const;
-        bool isLooped() const;
-        bool isPlaying() const;
         sf::Vector2u getSize() const;
         sf::Time getFrameTime() const;
         bool contains(const sf::Vector2f &p_point) const;

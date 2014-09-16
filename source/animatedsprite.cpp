@@ -32,31 +32,6 @@ AnimatedSprite::AnimatedSprite(const sf::Texture &texture, sf::Time frameTime,bo
         setTexture(texture);
 }
 
-/*sf::FloatRect AnimatedSprite::getLocalBounds() const
-{
-    sf::IntRect rect = m_animation[m_currentFrame];
-
-    float width = static_cast<float>(std::abs(rect.width));
-    float height = static_cast<float>(std::abs(rect.height));
-
-    return sf::FloatRect(0.f, 0.f, width, height);
-}
-
-sf::FloatRect AnimatedSprite::getGlobalBounds() const
-{
-    return getTransform().transformRect(getLocalBounds());
-}*/
-
-bool AnimatedSprite::isLooped() const
-{
-        return m_isLooped;
-}
-
-bool AnimatedSprite::isPlaying() const
-{
-        return !m_isPaused;
-}
-
 sf::Vector2u AnimatedSprite::getSize() const {
         return getTexture()->getSize();
 }
