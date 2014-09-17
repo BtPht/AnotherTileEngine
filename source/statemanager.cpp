@@ -1,8 +1,9 @@
 #include "statemanager.h"
 
 StateManager::StateManager()
-        :contextwindow(sf::VideoMode(400, 300), "Fenetre créée par défaut")
 {
+        contextwindow = new GameWindow();
+
         IWindowContent **loading, **introMenu, **inGame, **inGameMenu, **exit;
 
         loading = new IWindowContent*;
@@ -15,13 +16,13 @@ StateManager::StateManager()
         *introMenu = new IntroMenu(this, inGame, exit);
         *inGame = new InGameWindow(this, inGameMenu);
         *inGameMenu = new InGameMenu(this, inGame, exit);
+        *exit = new ExitWindow(this);
 
         currentState = *loading ;
 }
 
 StateManager::~StateManager()
 {
-
 }
 
 void StateManager::setCurrentState(IWindowContent *newState)
@@ -39,5 +40,5 @@ bool StateManager::drawCurrentState()
 
 sf::RenderWindow *StateManager::getRenderWindow()
 {
-        return &contextwindow;
+        return contextwindow;
 }

@@ -27,7 +27,8 @@ SOURCES += main.cpp \
     loadingwindow.cpp \
     intromenu.cpp \
     ingamewindow.cpp \
-    ingamemenu.cpp
+    ingamemenu.cpp \
+    exitwindow.cpp
 
 HEADERS += \
     windowsmanager.h \
@@ -46,7 +47,8 @@ HEADERS += \
     intromenu.h \
     ingamewindow.h \
     ingamemenu.h \
-    istatemanager.h
+    istatemanager.h \
+    exitwindow.h
 
 OTHER_FILES += \
     ../test.map \

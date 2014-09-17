@@ -6,6 +6,9 @@
 #include "intromenu.h"
 #include "ingamewindow.h"
 #include "ingamemenu.h"
+#include "exitwindow.h"
+
+#include "gamewindow.h"
 
 class IWindowContent;
 
@@ -20,7 +23,7 @@ public:
 
         ~StateManager();
 private:
-        sf::RenderWindow contextwindow;
+        sf::RenderWindow *contextwindow;
         IWindowContent *currentState;
 };
 

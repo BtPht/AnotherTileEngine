@@ -29,5 +29,9 @@ bool InGameMenu::handleWindow()
                         stateManager->setCurrentState(*game);
                         return true;
                 }
+                if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Q)){
+                        stateManager->setCurrentState(*exit);
+                        return true;
+                }
         }
 }
