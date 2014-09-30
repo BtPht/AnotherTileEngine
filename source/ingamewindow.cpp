@@ -18,35 +18,15 @@ InGameWindow::InGameWindow(IStateManager *context, IWindowContent **_menu)
 
 bool InGameWindow::handleWindow()
 {
-//        sf::RectangleShape shape(sf::Vector2f(80,20));
-//        sf::Event event;
-
-//        renderWindow->setTitle("In-game window");
-//        renderWindow->clear();
-//        renderWindow->draw(shape);
-//        renderWindow->display();
-
-//        while (renderWindow->waitEvent(event))
-//        {
-//                // "close requested" event: we close the window
-//                if (event.type == sf::Event::Closed)
-//                        return false;
-
-//                if (event.type == sf::Event::MouseButtonReleased){
-//                        stateManager->setCurrentState(*menu);
-//                        return true;
-//                }
-//        }
-
-        GameWindow *current_window_d = dynamic_cast<GameWindow *>(renderWindow);
+        GameWindow *current_window = dynamic_cast<GameWindow *>(renderWindow);
 
         InfoTile *popup = nullptr;
 
         // Start game loop
         sf::Event event;
-        while (current_window_d->isOpen()) {
+        while (current_window->isOpen()) {
                 // Process events
-                while (current_window_d->pollEvent(event)) {
+                while (current_window->pollEvent(event)) {
                         // Close window : exit
                         if (event.type == sf::Event::Closed)
                                 return false;
@@ -58,15 +38,15 @@ bool InGameWindow::handleWindow()
                         }
 
                         if (event.type == sf::Event::Resized) {
-                                current_window_d->resize(event.size.width, event.size.height);
+                                current_window->resize(event.size.width, event.size.height);
                         }
                         if (event.type == sf::Event::MouseWheelMoved) {
-                                current_window_d->zoom(event.mouseWheel.delta);
+                                current_window->zoom(event.mouseWheel.delta);
                         }
                         if (event.type == sf::Event::MouseButtonReleased) {
                                 delete popup;
                                 popup = baseMap.getInfo(
-                                                current_window_d->mapPixelToCoords(sf::Mouse::getPosition(*current_window_d))
+                                                current_window->mapPixelToCoords(sf::Mouse::getPosition(*current_window))
                                                 );
                         }
                 }
@@ -77,21 +57,21 @@ bool InGameWindow::handleWindow()
 
                 link.move(depl);
 
-                current_window_d->clear();
+                current_window->clear();
 
-                current_window_d->draw(back);
+                current_window->draw(back);
 
-                current_window_d->scrolling();
+                current_window->scrolling();
 
                 baseMap.update();
 
-                current_window_d->draw(baseMap);
+                current_window->draw(baseMap);
 
-                current_window_d->draw(link);
+                current_window->draw(link);
 
-                if(popup != nullptr) current_window_d->draw(*popup);
+                if(popup != nullptr) current_window->draw(*popup);
 
-                current_window_d->display();
+                current_window->display();
 
         }
 

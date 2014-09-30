@@ -13,7 +13,6 @@ INCLUDEPATH += /usr/local/include
 DEPENDPATH += /usr/local/include
 
 SOURCES += main.cpp \
-    windowsmanager.cpp \
     gamewindow.cpp \
     player.cpp \
     texturesmanager.cpp \
@@ -31,7 +30,6 @@ SOURCES += main.cpp \
     exitwindow.cpp
 
 HEADERS += \
-    windowsmanager.h \
     gamewindow.h \
     player.h \
     texturesmanager.h \
